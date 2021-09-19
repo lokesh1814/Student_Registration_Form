@@ -88,7 +88,7 @@ def fetch_data():
 
 def show():
     con = mysql.connect(host="localhost", user="root", password="",
-                        database="login and registration")  # For connecting with mysql database
+                        database="Student Registration")  # For connecting with mysql database
     cursor = con.cursor()  # for executing any query
     cursor.execute("select * from student")
     rows = cursor.fetchall()
