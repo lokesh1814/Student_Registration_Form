@@ -39,7 +39,7 @@ def update_data():
         tmsg.showinfo("Update Status", "All fields are required")
     else:
         con = mysql.connect(host="localhost", user="root", password="",
-                            database="login and registration")  # For connecting with mysql database
+                            database="Student Registration")  # For connecting with mysql database
         cursor = con.cursor()  # for executing any query
         cursor.execute("update student set name='"+ name +"', phone='"+ phone +"' where id='"+ id +"'")
         cursor.execute("commit");
@@ -56,7 +56,7 @@ def delete_data():
         tmsg.showinfo("Delete Status", "Id is compulsory for delete")
     else:
         con = mysql.connect(host="localhost", user="root", password="",
-                            database="login and registration")  # For connecting with mysql database
+                            database="Student Registration")  # For connecting with mysql database
         cursor = con.cursor()  # for executing any query
         cursor.execute("delete from student where id = ('"+ e_id.get() +"')")
         cursor.execute("commit");
@@ -70,10 +70,10 @@ def delete_data():
 
 def fetch_data():
     if (e_id.get() == ""):
-        tmsg.showinfo("Fetch Status", "Id is compulsory for delete")
+        tmsg.showinfo("Fetch Status", "Id is compulsory for fetch")
     else:
         con = mysql.connect(host="localhost", user="root", password="",
-                            database="login and registration")  # For connecting with mysql database
+                            database="Student Registration")  # For connecting with mysql database
         cursor = con.cursor()  # for executing any query
         cursor.execute("select * from student where id = ('" + e_id.get() + "')")
         rows = cursor.fetchall()
@@ -82,7 +82,7 @@ def fetch_data():
             e_name.insert(0, row[1])
             e_phone.insert(0, row[2])
 
-        tmsg.showinfo("Fetch Status", "Data Deleted Successfully")
+        tmsg.showinfo("Fetch Status", "Data fetched Successfully")
         con.close();
 
 
