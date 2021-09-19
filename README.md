@@ -1,4 +1,4 @@
-#Student Registration Form
+Student Registration Form
 
 Before running need to install the  modules:
 
